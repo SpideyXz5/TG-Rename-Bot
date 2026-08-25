@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: telegram-file-rename-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: DB_NAME
+        value: rename_bot
